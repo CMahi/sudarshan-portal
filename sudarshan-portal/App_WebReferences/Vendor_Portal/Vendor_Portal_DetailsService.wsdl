@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://sapbeans.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="Vendor_Portal_DetailsService" targetNamespace="http://sapbeans.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://200.200.200.153:8080/UAT_SUDARSHAN_WEBSERVICES/UAT_Vendor_WebService?xsd=1" namespace="http://sapbeans.com/" />
+    </xsd:schema>
+  </types>
+  <message name="VENDOR_AC_STATEMENT_DETAILS">
+    <part name="parameters" element="tns:VENDOR_AC_STATEMENT_DETAILS" />
+  </message>
+  <message name="VENDOR_AC_STATEMENT_DETAILSResponse">
+    <part name="parameters" element="tns:VENDOR_AC_STATEMENT_DETAILSResponse" />
+  </message>
+  <message name="VENDOR_UNIQUE_ID">
+    <part name="parameters" element="tns:VENDOR_UNIQUE_ID" />
+  </message>
+  <message name="VENDOR_UNIQUE_IDResponse">
+    <part name="parameters" element="tns:VENDOR_UNIQUE_IDResponse" />
+  </message>
+  <message name="RM_EMPLOYEE_DETAILS">
+    <part name="parameters" element="tns:RM_EMPLOYEE_DETAILS" />
+  </message>
+  <message name="RM_EMPLOYEE_DETAILSResponse">
+    <part name="parameters" element="tns:RM_EMPLOYEE_DETAILSResponse" />
+  </message>
+  <message name="CMA_EMPLOYEE_DETAILS">
+    <part name="parameters" element="tns:CMA_EMPLOYEE_DETAILS" />
+  </message>
+  <message name="CMA_EMPLOYEE_DETAILSResponse">
+    <part name="parameters" element="tns:CMA_EMPLOYEE_DETAILSResponse" />
+  </message>
+  <message name="MOBILE_DEDUCTION">
+    <part name="parameters" element="tns:MOBILE_DEDUCTION" />
+  </message>
+  <message name="MOBILE_DEDUCTIONResponse">
+    <part name="parameters" element="tns:MOBILE_DEDUCTIONResponse" />
+  </message>
+  <message name="EXCISE_INVOICE_HARD_COPY">
+    <part name="parameters" element="tns:EXCISE_INVOICE_HARD_COPY" />
+  </message>
+  <message name="EXCISE_INVOICE_HARD_COPYResponse">
+    <part name="parameters" element="tns:EXCISE_INVOICE_HARD_COPYResponse" />
+  </message>
+  <message name="TAX_INVOICE_HARD_COPY">
+    <part name="parameters" element="tns:TAX_INVOICE_HARD_COPY" />
+  </message>
+  <message name="TAX_INVOICE_HARD_COPYResponse">
+    <part name="parameters" element="tns:TAX_INVOICE_HARD_COPYResponse" />
+  </message>
+  <message name="CASH_LEGDER">
+    <part name="parameters" element="tns:CASH_LEGDER" />
+  </message>
+  <message name="CASH_LEGDERResponse">
+    <part name="parameters" element="tns:CASH_LEGDERResponse" />
+  </message>
+  <message name="BANK_DETAILS">
+    <part name="parameters" element="tns:BANK_DETAILS" />
+  </message>
+  <message name="BANK_DETAILSResponse">
+    <part name="parameters" element="tns:BANK_DETAILSResponse" />
+  </message>
+  <message name="PO_VENDOR_UNIQUE_ID">
+    <part name="parameters" element="tns:PO_VENDOR_UNIQUE_ID" />
+  </message>
+  <message name="PO_VENDOR_UNIQUE_IDResponse">
+    <part name="parameters" element="tns:PO_VENDOR_UNIQUE_IDResponse" />
+  </message>
+  <message name="PO_PF_SLIP_RECEIPT">
+    <part name="parameters" element="tns:PO_PF_SLIP_RECEIPT" />
+  </message>
+  <message name="PO_PF_SLIP_RECEIPTResponse">
+    <part name="parameters" element="tns:PO_PF_SLIP_RECEIPTResponse" />
+  </message>
+  <message name="PO_SERVICE_SUMMARY_RECEIPT">
+    <part name="parameters" element="tns:PO_SERVICE_SUMMARY_RECEIPT" />
+  </message>
+  <message name="PO_SERVICE_SUMMARY_RECEIPTResponse">
+    <part name="parameters" element="tns:PO_SERVICE_SUMMARY_RECEIPTResponse" />
+  </message>
+  <portType name="Vendor_Portal_Details">
+    <operation name="VENDOR_AC_STATEMENT_DETAILS">
+      <input wsam:Action="http://sapbeans.com/Vendor_Portal_Details/VENDOR_AC_STATEMENT_DETAILSRequest" message="tns:VENDOR_AC_STATEMENT_DETAILS" />
+      <output wsam:Action="http://sapbeans.com/Vendor_Portal_Details/VENDOR_AC_STATEMENT_DETAILSResponse" message="tns:VENDOR_AC_STATEMENT_DETAILSResponse" />
+    </operation>
+    <operation name="VENDOR_UNIQUE_ID">
+      <input wsam:Action="http://sapbeans.com/Vendor_Portal_Details/VENDOR_UNIQUE_IDRequest" message="tns:VENDOR_UNIQUE_ID" />
+      <output wsam:Action="http://sapbeans.com/Vendor_Portal_Details/VENDOR_UNIQUE_IDResponse" message="tns:VENDOR_UNIQUE_IDResponse" />
+    </operation>
+    <operation name="RM_EMPLOYEE_DETAILS">
+      <input wsam:Action="http://sapbeans.com/Vendor_Portal_Details/RM_EMPLOYEE_DETAILSRequest" message="tns:RM_EMPLOYEE_DETAILS" />
+      <output wsam:Action="http://sapbeans.com/Vendor_Portal_Details/RM_EMPLOYEE_DETAILSResponse" message="tns:RM_EMPLOYEE_DETAILSResponse" />
+    </operation>
+    <operation name="CMA_EMPLOYEE_DETAILS">
+      <input wsam:Action="http://sapbeans.com/Vendor_Portal_Details/CMA_EMPLOYEE_DETAILSRequest" message="tns:CMA_EMPLOYEE_DETAILS" />
+      <output wsam:Action="http://sapbeans.com/Vendor_Portal_Details/CMA_EMPLOYEE_DETAILSResponse" message="tns:CMA_EMPLOYEE_DETAILSResponse" />
+    </operation>
+    <operation name="MOBILE_DEDUCTION">
+      <input wsam:Action="http://sapbeans.com/Vendor_Portal_Details/MOBILE_DEDUCTIONRequest" message="tns:MOBILE_DEDUCTION" />
+      <output wsam:Action="http://sapbeans.com/Vendor_Portal_Details/MOBILE_DEDUCTIONResponse" message="tns:MOBILE_DEDUCTIONResponse" />
+    </operation>
+    <operation name="EXCISE_INVOICE_HARD_COPY">
+      <input wsam:Action="http://sapbeans.com/Vendor_Portal_Details/EXCISE_INVOICE_HARD_COPYRequest" message="tns:EXCISE_INVOICE_HARD_COPY" />
+      <output wsam:Action="http://sapbeans.com/Vendor_Portal_Details/EXCISE_INVOICE_HARD_COPYResponse" message="tns:EXCISE_INVOICE_HARD_COPYResponse" />
+    </operation>
+    <operation name="TAX_INVOICE_HARD_COPY">
+      <input wsam:Action="http://sapbeans.com/Vendor_Portal_Details/TAX_INVOICE_HARD_COPYRequest" message="tns:TAX_INVOICE_HARD_COPY" />
+      <output wsam:Action="http://sapbeans.com/Vendor_Portal_Details/TAX_INVOICE_HARD_COPYResponse" message="tns:TAX_INVOICE_HARD_COPYResponse" />
+    </operation>
+    <operation name="CASH_LEGDER">
+      <input wsam:Action="http://sapbeans.com/Vendor_Portal_Details/CASH_LEGDERRequest" message="tns:CASH_LEGDER" />
+      <output wsam:Action="http://sapbeans.com/Vendor_Portal_Details/CASH_LEGDERResponse" message="tns:CASH_LEGDERResponse" />
+    </operation>
+    <operation name="BANK_DETAILS">
+      <input wsam:Action="http://sapbeans.com/Vendor_Portal_Details/BANK_DETAILSRequest" message="tns:BANK_DETAILS" />
+      <output wsam:Action="http://sapbeans.com/Vendor_Portal_Details/BANK_DETAILSResponse" message="tns:BANK_DETAILSResponse" />
+    </operation>
+    <operation name="PO_VENDOR_UNIQUE_ID">
+      <input wsam:Action="http://sapbeans.com/Vendor_Portal_Details/PO_VENDOR_UNIQUE_IDRequest" message="tns:PO_VENDOR_UNIQUE_ID" />
+      <output wsam:Action="http://sapbeans.com/Vendor_Portal_Details/PO_VENDOR_UNIQUE_IDResponse" message="tns:PO_VENDOR_UNIQUE_IDResponse" />
+    </operation>
+    <operation name="PO_PF_SLIP_RECEIPT">
+      <input wsam:Action="http://sapbeans.com/Vendor_Portal_Details/PO_PF_SLIP_RECEIPTRequest" message="tns:PO_PF_SLIP_RECEIPT" />
+      <output wsam:Action="http://sapbeans.com/Vendor_Portal_Details/PO_PF_SLIP_RECEIPTResponse" message="tns:PO_PF_SLIP_RECEIPTResponse" />
+    </operation>
+    <operation name="PO_SERVICE_SUMMARY_RECEIPT">
+      <input wsam:Action="http://sapbeans.com/Vendor_Portal_Details/PO_SERVICE_SUMMARY_RECEIPTRequest" message="tns:PO_SERVICE_SUMMARY_RECEIPT" />
+      <output wsam:Action="http://sapbeans.com/Vendor_Portal_Details/PO_SERVICE_SUMMARY_RECEIPTResponse" message="tns:PO_SERVICE_SUMMARY_RECEIPTResponse" />
+    </operation>
+  </portType>
+  <binding name="Vendor_Portal_DetailsPortBinding" type="tns:Vendor_Portal_Details">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="VENDOR_AC_STATEMENT_DETAILS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="VENDOR_UNIQUE_ID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RM_EMPLOYEE_DETAILS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CMA_EMPLOYEE_DETAILS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="MOBILE_DEDUCTION">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="EXCISE_INVOICE_HARD_COPY">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TAX_INVOICE_HARD_COPY">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CASH_LEGDER">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="BANK_DETAILS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PO_VENDOR_UNIQUE_ID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PO_PF_SLIP_RECEIPT">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PO_SERVICE_SUMMARY_RECEIPT">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Vendor_Portal_DetailsService">
+    <port name="Vendor_Portal_DetailsPort" binding="tns:Vendor_Portal_DetailsPortBinding">
+      <soap:address location="http://200.200.200.153:8080/UAT_SUDARSHAN_WEBSERVICES/UAT_Vendor_WebService" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://sapbeans.com/" targetNamespace="http://sapbeans.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="BANK_DETAILS" type="tns:BANK_DETAILS" />
+  <xs:element name="BANK_DETAILSResponse" type="tns:BANK_DETAILSResponse" />
+  <xs:element name="CASH_LEGDER" type="tns:CASH_LEGDER" />
+  <xs:element name="CASH_LEGDERResponse" type="tns:CASH_LEGDERResponse" />
+  <xs:element name="CMA_EMPLOYEE_DETAILS" type="tns:CMA_EMPLOYEE_DETAILS" />
+  <xs:element name="CMA_EMPLOYEE_DETAILSResponse" type="tns:CMA_EMPLOYEE_DETAILSResponse" />
+  <xs:element name="EXCISE_INVOICE_HARD_COPY" type="tns:EXCISE_INVOICE_HARD_COPY" />
+  <xs:element name="EXCISE_INVOICE_HARD_COPYResponse" type="tns:EXCISE_INVOICE_HARD_COPYResponse" />
+  <xs:element name="MOBILE_DEDUCTION" type="tns:MOBILE_DEDUCTION" />
+  <xs:element name="MOBILE_DEDUCTIONResponse" type="tns:MOBILE_DEDUCTIONResponse" />
+  <xs:element name="PO_PF_SLIP_RECEIPT" type="tns:PO_PF_SLIP_RECEIPT" />
+  <xs:element name="PO_PF_SLIP_RECEIPTResponse" type="tns:PO_PF_SLIP_RECEIPTResponse" />
+  <xs:element name="PO_SERVICE_SUMMARY_RECEIPT" type="tns:PO_SERVICE_SUMMARY_RECEIPT" />
+  <xs:element name="PO_SERVICE_SUMMARY_RECEIPTResponse" type="tns:PO_SERVICE_SUMMARY_RECEIPTResponse" />
+  <xs:element name="PO_VENDOR_UNIQUE_ID" type="tns:PO_VENDOR_UNIQUE_ID" />
+  <xs:element name="PO_VENDOR_UNIQUE_IDResponse" type="tns:PO_VENDOR_UNIQUE_IDResponse" />
+  <xs:element name="RM_EMPLOYEE_DETAILS" type="tns:RM_EMPLOYEE_DETAILS" />
+  <xs:element name="RM_EMPLOYEE_DETAILSResponse" type="tns:RM_EMPLOYEE_DETAILSResponse" />
+  <xs:element name="TAX_INVOICE_HARD_COPY" type="tns:TAX_INVOICE_HARD_COPY" />
+  <xs:element name="TAX_INVOICE_HARD_COPYResponse" type="tns:TAX_INVOICE_HARD_COPYResponse" />
+  <xs:element name="VENDOR_AC_STATEMENT_DETAILS" type="tns:VENDOR_AC_STATEMENT_DETAILS" />
+  <xs:element name="VENDOR_AC_STATEMENT_DETAILSResponse" type="tns:VENDOR_AC_STATEMENT_DETAILSResponse" />
+  <xs:element name="VENDOR_UNIQUE_ID" type="tns:VENDOR_UNIQUE_ID" />
+  <xs:element name="VENDOR_UNIQUE_IDResponse" type="tns:VENDOR_UNIQUE_IDResponse" />
+  <xs:complexType name="BANK_DETAILS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BANK_DETAILSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PO_VENDOR_UNIQUE_ID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+      <xs:element minOccurs="0" name="arg6" type="xs:string" />
+      <xs:element minOccurs="0" name="arg7" type="xs:string" />
+      <xs:element minOccurs="0" name="arg8" type="xs:string" />
+      <xs:element minOccurs="0" name="arg9" type="xs:string" />
+      <xs:element minOccurs="0" name="arg10" type="xs:string" />
+      <xs:element minOccurs="0" name="arg11" type="xs:string" />
+      <xs:element minOccurs="0" name="arg12" type="xs:string" />
+      <xs:element minOccurs="0" name="arg13" type="xs:string" />
+      <xs:element minOccurs="0" name="arg14" type="xs:string" />
+      <xs:element minOccurs="0" name="arg15" type="xs:string" />
+      <xs:element minOccurs="0" name="arg16" type="xs:string" />
+      <xs:element minOccurs="0" name="arg17" type="xs:string" />
+      <xs:element minOccurs="0" name="arg18" type="xs:string" />
+      <xs:element minOccurs="0" name="arg19" type="xs:string" />
+      <xs:element minOccurs="0" name="arg20" type="xs:string" />
+      <xs:element minOccurs="0" name="arg21" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PO_VENDOR_UNIQUE_IDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TAX_INVOICE_HARD_COPY">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TAX_INVOICE_HARD_COPYResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VENDOR_UNIQUE_ID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+      <xs:element minOccurs="0" name="arg6" type="xs:string" />
+      <xs:element minOccurs="0" name="arg7" type="xs:string" />
+      <xs:element minOccurs="0" name="arg8" type="xs:string" />
+      <xs:element minOccurs="0" name="arg9" type="xs:string" />
+      <xs:element minOccurs="0" name="arg10" type="xs:string" />
+      <xs:element minOccurs="0" name="arg11" type="xs:string" />
+      <xs:element minOccurs="0" name="arg12" type="xs:string" />
+      <xs:element minOccurs="0" name="arg13" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VENDOR_UNIQUE_IDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CASH_LEGDER">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+      <xs:element minOccurs="0" name="arg6" type="xs:string" />
+      <xs:element minOccurs="0" name="arg7" type="xs:string" />
+      <xs:element minOccurs="0" name="arg8" type="xs:string" />
+      <xs:element minOccurs="0" name="arg9" type="xs:string" />
+      <xs:element minOccurs="0" name="arg10" type="xs:string" />
+      <xs:element minOccurs="0" name="arg11" type="xs:string" />
+      <xs:element minOccurs="0" name="arg12" type="xs:string" />
+      <xs:element minOccurs="0" name="arg13" type="xs:string" />
+      <xs:element minOccurs="0" name="arg14" type="xs:string" />
+      <xs:element minOccurs="0" name="arg15" type="xs:string" />
+      <xs:element minOccurs="0" name="arg16" type="xs:string" />
+      <xs:element minOccurs="0" name="arg17" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CASH_LEGDERResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VENDOR_AC_STATEMENT_DETAILS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VENDOR_AC_STATEMENT_DETAILSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CMA_EMPLOYEE_DETAILS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CMA_EMPLOYEE_DETAILSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RM_EMPLOYEE_DETAILS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RM_EMPLOYEE_DETAILSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PO_SERVICE_SUMMARY_RECEIPT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PO_SERVICE_SUMMARY_RECEIPTResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXCISE_INVOICE_HARD_COPY">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXCISE_INVOICE_HARD_COPYResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MOBILE_DEDUCTION">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MOBILE_DEDUCTIONResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PO_PF_SLIP_RECEIPT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PO_PF_SLIP_RECEIPTResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

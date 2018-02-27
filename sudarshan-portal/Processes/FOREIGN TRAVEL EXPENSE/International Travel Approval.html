@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>International Travel Expense Approval</title>
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/css/style.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
+    <link href="assets/plugins/bootstrap-calendar/css/bootstrap_calendar.css" rel="stylesheet" />
+	<link href="assets/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+	<form id="form_main" name="form_main">
+		<div id="header" class="header navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header"><a href="WorkQueue.html" class="text-muted"><img src="images/Home.png" height="30" style="margin-top:12px;" /><img src="images/Logo.png" height="20" style="margin-top:15px;margin-left:10px;" /></a></div>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown navbar-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<span class="hidden-xs">K.S.Joshi</span> <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li><a href="Edit Profile.html">Edit Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="Login.html">Log Out</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-danger">
+					<div class="panel-heading">
+						<h3 class="panel-title"><i class="fa fa-fw m-r-10 pull-left f-s-18 fa-user"></i>Employee Details</h3>
+					</div>
+					<div class="panel-body" id="div_hdr">
+						<div class="form-horizontal">
+							<div class="form-group">
+								<div class="col-md-1"></div>
+								<label class="col-md-2">Employee No</label>
+								<div class="col-md-3">
+									<div id="Div3"><span id="empno">1123</span></div>
+								</div>
+								<div class="col-md-1"></div>
+								<label class="col-md-2">Employee Name</label>
+								<div class="col-md-3">
+									<div id="EmployeeName"><span id="span_ename">Patil Deepak Balsingrao</span></div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-1"></div>
+								<label class="col-md-2">Designation</label>
+								<div class="col-md-3">
+									<div id="Div2"><span id="span_designation">Senior Executive - Accounts</span></div>
+								</div>
+								<div class="col-md-1"></div>
+								<label class="col-md-2">Division</label>
+								<div class="col-md-3">
+									<div id="Div9"><span id="span_Division">NA</span></div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-1"></div>
+								<label class="col-md-2">Department</label>
+								<div class="col-md-3">
+									<div id="EmployeeDepartment"><span id="span_dept">Finance And Accounts</span></div>
+								</div>
+								<div class="col-md-1"></div>
+								<label class="col-md-2">Grade</label>
+								<div class="col-md-3">
+									<div id="grade"><span id="span_grade">L3</span></div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-1"></div>
+								<label class="col-md-2">Cost Center</label>
+								<div class="col-md-3">
+									<div id="Div1"><span id="span_cc">Accounts - Pune</span></div>
+								</div>
+								<div class="col-md-1"></div>  
+								<label class="col-md-2">Approver </label>
+								<div class="col-md-3">
+									<div id="Div5"><span id="span_Approver" style="display:none">VVTHAKUR</span><span id="span_app_name">Mr. Vivek V Thakur</span></div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-1"></div>                             
+								<label class="col-md-2">Payment Mode</label>
+								<div class="col-md-3"><div id="div_Paymentmode">Bank</div></div>
+								<div class="col-md-1"></div>
+								<label class="col-md-2">Bank Account No</label>
+								<div class="col-md-3"><div id="div_TravelFromDate">000000074500</div></div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-1"></div>
+								<label class="col-md-2">Travel From Date</label>
+								<div class="col-md-3"><div id="div_TravelFromDate">12-May-2016</div></div>
+								<div class="col-md-1"></div>
+								<label class="col-md-2">Travel To Date</label>
+								<div class="col-md-3"><div id="div_TravelFromDate">15-May-2016</div></div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-1"></div>
+								<label class="col-md-2">Mobile No.</label>
+								<div class="col-md-3"><div id="PhoneNo">9099066664</div></div>
+								<div class="col-md-1"></div>
+								<label class="col-md-2">Country</label>
+								<div class="col-md-3"><div id="div_TravelFromDate">USA</div></div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-1"></div>
+								<label class="col-md-2">Upload Documents</label>
+								<div class="col-md-3">
+									<a href="#div_UploadDocument" data-toggle="modal"><img id="A_FileUpload1" src="images/attachment.png" alt="Click here to attach file." height="20" width="20" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="panel panel-grey">
+					<div class="panel-heading">
+						<div class="panel-heading-btn">
+							<h4 class="panel-title"><a>View Policy</a></h4>
+						</div>
+						<h3 class="panel-title">Advances</h3>
+					</div>
+					<div class="panel-body">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th style="width:5%">#</th>
+									<th>Advance Date</th>
+									<th>Amount(<i class="fa fa-dollar"></i>)</th>
+									<th>Approved By</th>
+									<th>Approval Date</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>12-May-2016</td>
+									<td style="text-align:right">50</td>
+									<td>D B Patil</td>
+									<td>12-Apr-2016</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="panel panel-grey">
+					<div class="panel-heading">
+						<div class="panel-heading-btn">
+							<label>Receivable : <i class="fa fa-rupee"></i>21000.00</label>
+						</div>
+						<h3 class="panel-title"><i class="fa fa-fw m-r-10 pull-left f-s-18 fa-plane"></i>International Travel Expense Approval</h3>
+					</div>
+					<div class="panel-body">
+						<p style="color:red">Note : <i class="fa fa-fw fa-angle-double-right"></i><i class="fa fa-fw fa-angle-double-right"></i>RR (Regular Reimbursement), CP(Company Provided), TC(Travel Card)</p>
+						<div class="panel-group" id="accordion">
+							<div class="panel">
+								<div class="panel-heading" style="background-color:#94b8b8;border-radius:0px 0px 0px 0px">
+									<div class="panel-heading-btn">
+										Total Amount <i class="fa fa-rupee"></i>24000.00
+									</div>
+									<h3 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSummery">
+											<i class="fa fa-fw m-r-10 fa-plus"></i>Summary
+										</a>
+									</h3>
+								</div>
+								<div id="collapseSummery" class="panel-collapse collapse in">
+									<div class="panel-body" style="background-color:#f0f5f5">
+										<div class="form-horizontal">
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<div class="col-md-10">
+													<table class="table table-bordered">
+														<thead>
+															<tr class="grey">
+																<th>Lodging/Hotel(<i class="fa fa-rupee"></i>)</th>
+																<th>Boarding(<i class="fa fa-rupee"></i>)</th>
+																<th>Conveyance(<i class="fa fa-rupee"></i>)</th>
+																<th>Incidental Exp(<i class="fa fa-rupee"></i>)</th>
+																<th>Other(<i class="fa fa-rupee"></i>)</th>
+																<th>Total(<i class="fa fa-rupee"></i>)</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td style="text-align:right">4800.00</td>
+																<td style="text-align:right">4800.00</td>
+																<td style="text-align:right">4800.00</td>
+																<td style="text-align:right">4800.00</td>
+																<td style="text-align:right">4800.00</td>
+																<td style="text-align:right">24000.00</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="panel">
+								<div class="panel-heading" style="background-color:#94b8b8;border-radius:0px 0px 0px 0px">
+									<div class="panel-heading-btn">
+										<div>Total Amount <i class="fa fa-rupee"></i>6000.00</div>
+									</div>
+									<h3 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+											<i class="fa fa-fw m-r-10 fa-plus"></i>12-May-2016
+										</a>
+									</h3>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse">
+									<div class="panel-body" style="background-color:#f0f5f5">
+										<div class="form-horizontal">
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">City</label>
+												<div class="col-md-3"><div id="div_City">Boston</div></div>
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Accommodation Type</label>
+												<div class="col-md-3"><div id="div_AccommodationType">Single Bed Occupancy</div></div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Hotel Name</label>
+												<div class="col-md-3"><div id="div_Single Bed Occupancy">Marriot</div></div>
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Hotel Contact No</label>
+												<div class="col-md-3"><div id="div_Single Bed Occupancy">8989898934</div></div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Particulars</label>
+												<div class="col-md-3"><div id="div_Single Bed Occupancy">Visit to Boston for conference</div></div>
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Exchange Rate</label>
+												<div class="col-md-3"><div id="div_Single Bed Occupancy"><i class="fa fa-rupee"></i>60</div></div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<table class="table table-bordered">
+														<thead>
+															<tr class='grey'>
+																<th>Expense Head</th>
+																<th>GL Code</th>
+																<th>Payment Mode</th>
+																<th>Amount(<i class="fa fa-dollar"></i>)</th>
+																<th>Amount(<i class="fa fa-rupee"></i>)</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>Lodging/Hotel</td>
+																<td>780201</td>
+																<td>CC</td>
+																<td style="text-align:right">20</td>
+																<td>1200.00</td>
+															</tr>
+															<tr>
+																<td>Boarding</td>
+																<td>780202</td>
+																<td>CC</td>
+																<td style="text-align:right">20</td>
+																<td>1200.00</td>
+															</tr>
+															<tr>
+																<td>Conveyance</td>
+																<td>780203</td>
+																<td>CC</td>
+																<td style="text-align:right">20</td>
+																<td>1200.00</td>
+															</tr>
+															<tr>
+																<td>Incidental Exp</td>
+																<td>780204</td>
+																<td>CC</td>
+																<td style="text-align:right">20</td>
+																<td>1200.00</td>
+															</tr>
+															<tr>
+																<td>Other</td>
+																<td>780205</td>
+																<td>CC</td>
+																<td style="text-align:right">20</td>
+																<td>1200.00</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="panel">
+								<div class="panel-heading" style="background-color:#94b8b8;border-radius:0px 0px 0px 0px">
+									<div class="panel-heading-btn">
+										<div>Total Amount <i class="fa fa-rupee"></i>6000.00</div>
+									</div>
+									<h3 class="panel-title">
+										<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+											<i class="fa fa-fw m-r-10 fa-plus"></i>13-May-2016
+										</a>
+									</h3>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse">
+									<div class="panel-body" style="background-color:#f0f5f5">
+										<div class="form-horizontal">
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">City</label>
+												<div class="col-md-3">
+													<select id="journey_Type" runat="server" class="form-control input-sm"><option value="0">---Select One---</option><option value="4">Boston</option><option value="2">California</option><option value="1">New York</option></select>
+												</div>
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Accommodation Type</label>
+												<div class="col-md-3">
+													<select id="roomType" class="form-control input-sm"><option value="0">---Select One---</option><option value="1">Single Bed Occupancy</option><option value="2">Double Bed Occupancy</option></select>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Hotel Name</label>
+												<div class="col-md-3">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Hotel Contact No</label>
+												<div class="col-md-3">
+													<input class="form-control input-sm" type="text">
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Particulars</label>
+												<div class="col-md-3">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<div class="col-md-1"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="panel">
+								<div class="panel-heading" style="background-color:#94b8b8;border-radius:0px 0px 0px 0px">
+									<div class="panel-heading-btn">
+										<div>Total Amount <i class="fa fa-rupee"></i>6000.00</div>
+									</div>
+									<h3 class="panel-title">
+										<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+											<i class="fa fa-fw m-r-10 fa-plus"></i>14-May-2016
+										</a>
+									</h3>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse">
+									<div class="panel-body" style="background-color:#f0f5f5">
+										<div class="form-horizontal">
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">City</label>
+												<div class="col-md-3">
+													<select id="journey_Type" runat="server" class="form-control input-sm"><option value="0">---Select One---</option><option value="4">Boston</option><option value="2">California</option><option value="1">New York</option></select>
+												</div>
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Accommodation Type</label>
+												<div class="col-md-3">
+													<select id="roomType" class="form-control input-sm"><option value="0">---Select One---</option><option value="1">Single Bed Occupancy</option><option value="2">Double Bed Occupancy</option></select>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Hotel Name</label>
+												<div class="col-md-3">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Hotel Contact No</label>
+												<div class="col-md-3">
+													<input class="form-control input-sm" type="text">
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Particulars</label>
+												<div class="col-md-3">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<div class="col-md-1"></div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Lodging/Hotel</label>
+												<div class="col-md-2">
+													<div class="clearfix">
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option1" type="radio"> RR
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option2" type="radio"> CP
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option3" type="radio"> CC
+														</label>
+													</div>
+												</div>
+												<label class="col-md-1">Amount(<i class="fa fa-dollar"></i>)</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text" />
+												</div>
+												<label class="col-md-2">Exchange Rate</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2"><i class="fa fa-rupee"></i>1200.00</label>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Boarding</label>
+												<div class="col-md-2">
+													<div class="clearfix">
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option1" type="radio"> RR
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option2" type="radio"> CP
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option3" type="radio"> CC
+														</label>
+													</div>
+												</div>
+												<label class="col-md-1">Amount(<i class="fa fa-dollar"></i>)</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2">Exchange Rate</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2"><i class="fa fa-rupee"></i>1200.00</label>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Conveyance</label>
+												<div class="col-md-2">
+													<div class="clearfix">
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option1" type="radio"> RR
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option2" type="radio"> CP
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option3" type="radio"> CC
+														</label>
+													</div>
+												</div>
+												<label class="col-md-1">Amount(<i class="fa fa-dollar"></i>)</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2">Exchange Rate</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2"><i class="fa fa-rupee"></i>1200.00</label>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Incidental Exp</label>
+												<div class="col-md-2">
+													<div class="clearfix">
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option1" type="radio"> RR
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option2" type="radio"> CP
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option3" type="radio"> CC
+														</label>
+													</div>
+												</div>
+												<label class="col-md-1">Amount(<i class="fa fa-dollar"></i>)</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2">Exchange Rate</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2"><i class="fa fa-rupee"></i>1200.00</label>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Other</label>
+												<div class="col-md-2">
+													<div class="clearfix">
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option1" type="radio"> RR
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option2" type="radio"> CP
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option3" type="radio"> CC
+														</label>
+													</div>
+												</div>
+												<label class="col-md-1">Amount(<i class="fa fa-dollar"></i>)</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2">Exchange Rate</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2"><i class="fa fa-rupee"></i>1200.00</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="panel">
+								<div class="panel-heading" style="background-color:#94b8b8;border-radius:0px 0px 0px 0px">
+									<div class="panel-heading-btn">
+										<div>Total Amount <i class="fa fa-rupee"></i>6000.00</div>
+									</div>
+									<h3 class="panel-title">
+										<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+											<i class="fa fa-fw m-r-10 fa-plus"></i>15-May-2016
+										</a>
+									</h3>
+								</div>
+								<div id="collapseFour" class="panel-collapse collapse">
+									<div class="panel-body" style="background-color:#f0f5f5">
+										<div class="form-horizontal">
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">City</label>
+												<div class="col-md-3">
+													<select id="journey_Type" runat="server" class="form-control input-sm"><option value="0">---Select One---</option><option value="4">Boston</option><option value="2">California</option><option value="1">New York</option></select>
+												</div>
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Accommodation Type</label>
+												<div class="col-md-3">
+													<select id="roomType" class="form-control input-sm"><option value="0">---Select One---</option><option value="1">Single Bed Occupancy</option><option value="2">Double Bed Occupancy</option></select>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Hotel Name</label>
+												<div class="col-md-3">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Hotel Contact No</label>
+												<div class="col-md-3">
+													<input class="form-control input-sm" type="text">
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Particulars</label>
+												<div class="col-md-3">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<div class="col-md-1"></div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Lodging/Hotel</label>
+												<div class="col-md-2">
+													<div class="clearfix">
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option1" type="radio"> RR
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option2" type="radio"> CP
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option3" type="radio"> CC
+														</label>
+													</div>
+												</div>
+												<label class="col-md-1">Amount(<i class="fa fa-dollar"></i>)</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text" />
+												</div>
+												<label class="col-md-2">Exchange Rate</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2"><i class="fa fa-rupee"></i>1200.00</label>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Boarding</label>
+												<div class="col-md-2">
+													<div class="clearfix">
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option1" type="radio"> RR
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option2" type="radio"> CP
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option3" type="radio"> CC
+														</label>
+													</div>
+												</div>
+												<label class="col-md-1">Amount(<i class="fa fa-dollar"></i>)</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2">Exchange Rate</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2"><i class="fa fa-rupee"></i>1200.00</label>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Conveyance</label>
+												<div class="col-md-2">
+													<div class="clearfix">
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option1" type="radio"> RR
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option2" type="radio"> CP
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option3" type="radio"> CC
+														</label>
+													</div>
+												</div>
+												<label class="col-md-1">Amount(<i class="fa fa-dollar"></i>)</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2">Exchange Rate</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2"><i class="fa fa-rupee"></i>1200.00</label>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Incidental Exp</label>
+												<div class="col-md-2">
+													<div class="clearfix">
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option1" type="radio"> RR
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option2" type="radio"> CP
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option3" type="radio"> CC
+														</label>
+													</div>
+												</div>
+												<label class="col-md-1">Amount(<i class="fa fa-dollar"></i>)</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2">Exchange Rate</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2"><i class="fa fa-rupee"></i>1200.00</label>
+											</div>
+											<div class="form-group">
+												<div class="col-md-1"></div>
+												<label class="col-md-2">Other</label>
+												<div class="col-md-2">
+													<div class="clearfix">
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option1" type="radio"> RR
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option2" type="radio"> CP
+														</label>
+														<label class="radio-inline">
+															<input name="inlineRadioOptions" value="option3" type="radio"> CC
+														</label>
+													</div>
+												</div>
+												<label class="col-md-1">Amount(<i class="fa fa-dollar"></i>)</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2">Exchange Rate</label>
+												<div class="col-md-1">
+													<input class="form-control input-sm" type="text">
+												</div>
+												<label class="col-md-2"><i class="fa fa-rupee"></i>1200.00</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="panel panel-grey">
+					<div class="panel-heading">
+						<h3 class="panel-title"><i class="fa fa-fw m-r-10 pull-left f-s-18 fa-credit-card"></i>Payment Details</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-horizontal">
+							<div class="form-group">
+								<label class="col-md-2">Exchange Rate</label>
+								<div class="col-md-2">
+									<input class="form-control input-sm" type="text">
+								</div>
+								<label class="col-md-2">Amount In FC</label>
+								<div class="col-md-2">
+									<input class="form-control input-sm" type="text">
+								</div>
+								<label class="col-md-2">Amount(<i class="fa fa-rupee"></i>)</label>
+								<div class="col-md-2">
+									<input class="form-control input-sm" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-2">Vendor Code</label>
+								<div class="col-md-2">
+									<select class="form-control input-sm">
+                                        <option>---Select One---</option>
+                                        <option>Laxmit Forex Pvt Ltd.</option>
+                                        <option>Trans Corp International Ltd.</option>
+                                    </select>
+								</div>
+								<label class="col-md-2">Vendor Bill No</label>
+								<div class="col-md-2">
+									<input class="form-control input-sm" type="text">
+								</div>
+								<label class="col-md-2">Vendor Bill Date</label>
+								<div class="col-md-2">
+									<div class="input-group">
+										<input name="travelFromDate" type="text" class="form-control input-sm datepicker-rtl" readonly="true">                                        
+										<span class="input-group-btn">
+											<button class="btn btn-grey input-sm" type="button"><i class="fa fa-calendar"></i></button>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="panel panel-grey">
+					<div class="panel-heading">
+						<h3 class="panel-title"><i class="fa fa-fw m-r-10 pull-left f-s-18 fa-thumbs-o-up"></i>Action</h3>
+					</div>
+					<div class="panel-body">
+						<div class="col-md-5"></div>
+						<div class="col-md-6">
+							<input id="btn_Save" name="btn_Save" class="btn btn-danger btn-rounded" value="Save" type="button" />
+							<input id="btn_Cancel" name="btn_Cancel" class="btn btn-danger btn-rounded" value="Cancel" type="button" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="display: none;" class="modal" id="div_UploadDocument">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Document Upload</h5>
+					</div>
+					<div class="modal-body">
+						<div class="form-horizontal">
+							<div class="form-group">
+								<div class="col-md-12">
+									<table class="table table-bordered" id="tbl_QuotationEntry">
+										<thead>
+											<tr class="grey">
+												<th style="width:5%">#</th>
+												<th>Description</th>
+												<th>File Name</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>Order Entry</td>
+												<td>Order Entry.txt</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>Order Entry</td>
+												<td>Order Entry.txt</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>Order Entry</td>
+												<td>Order Entry.txt</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<a href="javascript:;" class="btn btn-danger btn-rounded width-100" data-dismiss="modal">Close</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+   <!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	<script src="assets/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js"></script>
+	<script type="text/javascript">
+	var diffDays = 0;
+	$(document).ready(function () {
+		$(".datepicker-rtl").datepicker({ format: 'mm/dd/yyyy', autoclose: true, todayBtn: 'linked' })
+	});
+	</script>
+</body>
+</html>
+

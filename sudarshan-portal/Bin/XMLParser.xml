@@ -1,0 +1,417 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>XMLParser</name>
+    <version>1.0.1747.28649</version>
+    <fullname>XMLParser, Version=1.0.1747.28649, Culture=neutral, PublicKeyToken=null</fullname>
+  </assembly>
+  <members>
+    <member name="T:SNANET.XMLParser.Collections.CollectionWithEvents">
+      <summary>
+ Base Class for the Collections. 
+ </summary>
+ <remarks>
+ This class was ported from the CodeProject Custom Collection Add-In for C#. 
+ </remarks>
+ <history>
+ 	[bernardo]	13/10/2004	Created the class. 
+ </history></member>
+    <member name="E:SNANET.XMLParser.Collections.CollectionWithEvents.CollectionClear" />
+    <member name="T:SNANET.XMLParser.Collections.CollectionWithEvents.CollectionClearEventHandler">
+      <summary>
+ Event that is fired when the Collection is cleared. 
+ </summary>
+ <history>
+ 	[bernardo]	13/10/2004	Created the event. 
+ </history></member>
+    <member name="E:SNANET.XMLParser.Collections.CollectionWithEvents.CollectionChange" />
+    <member name="T:SNANET.XMLParser.Collections.CollectionWithEvents.CollectionChangeEventHandler">
+      <summary>
+ Event that is fired when the collection is changed. 
+ </summary>
+ <history>
+ 	[bernardo]	13/10/2004	Created the event. 
+ </history></member>
+    <member name="E:SNANET.XMLParser.Collections.CollectionWithEvents.Clearing" />
+    <member name="T:SNANET.XMLParser.Collections.CollectionWithEvents.ClearingEventHandler">
+      <summary>
+ Event that is fired when the list is being cleared (Before clear). 
+ </summary>
+ <history>
+ 	[bernardo]	13/10/2004	Created the event. 
+ </history></member>
+    <member name="E:SNANET.XMLParser.Collections.CollectionWithEvents.Cleared" />
+    <member name="T:SNANET.XMLParser.Collections.CollectionWithEvents.ClearedEventHandler">
+      <summary>
+ Event that is fired when the list is cleared (After clear). 
+ </summary>
+ <history>
+ 	[bernardo]	13/10/2004	Created the event. 
+ </history></member>
+    <member name="E:SNANET.XMLParser.Collections.CollectionWithEvents.Inserting" />
+    <member name="T:SNANET.XMLParser.Collections.CollectionWithEvents.InsertingEventHandler">
+      <summary>
+ Event that is fired when the list is having an item inserted. (Before insert) 
+ </summary>
+ <history>
+ 	[bernardo]	13/10/2004	Created the event. 
+ </history></member>
+    <member name="E:SNANET.XMLParser.Collections.CollectionWithEvents.Inserted" />
+    <member name="T:SNANET.XMLParser.Collections.CollectionWithEvents.InsertedEventHandler">
+      <summary>
+ Event that is fired when an item is inserted into the list. (After insert) 
+ </summary>
+ <history>
+ 	[bernardo]	13/10/2004	Created the event. 
+ </history></member>
+    <member name="E:SNANET.XMLParser.Collections.CollectionWithEvents.Removing" />
+    <member name="T:SNANET.XMLParser.Collections.CollectionWithEvents.RemovingEventHandler">
+      <summary>
+ Event that is fired when the list is having an item removed. (Before removal) 
+ </summary>
+ <history>
+ 	[bernardo]	13/10/2004	Created the event. 
+ </history></member>
+    <member name="E:SNANET.XMLParser.Collections.CollectionWithEvents.Removed" />
+    <member name="T:SNANET.XMLParser.Collections.CollectionWithEvents.RemovedEventHandler">
+      <summary>
+ Event that is fired when an item has been removed from the list. (After removal) 
+ </summary>
+ <history>
+ 	[bernardo]	13/10/2004	Created the event. 
+ </history></member>
+    <member name="T:SNANET.XMLParser.XMLAttribute">
+      <summary>
+ Class that encapsulates the most used properties of an attribute. 
+ </summary>
+ <history>
+ 	[bernardo]	13/10/2004	Created the class 
+ </history></member>
+    <member name="P:SNANET.XMLParser.XMLAttribute.Name">
+      <summary>
+ The name portion of the XML Attribute. 
+ </summary>
+ <value />
+ <history>
+ 	[bernardo]	13/10/2004	Created the Property 
+ </history></member>
+    <member name="P:SNANET.XMLParser.XMLAttribute.Value">
+      <summary>
+ The value portion of the XML Attribute. 
+ </summary>
+ <value />
+ <history>
+ 	[bernardo]	13/10/2004	Created the Property 
+ </history></member>
+    <member name="T:SNANET.XMLParser.Collections.XMLAttributeCollection">
+      <summary>
+ Collection of XMLAttributes. 
+ </summary>
+ <history>
+ 	[bernardo]	13/10/2004	Created the Class. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.Collections.XMLAttributeCollection.Add(SNANET.XMLParser.XMLAttribute)">
+      <summary>
+ This method adds a XMLAttribute to the XMLAttributeCollection. 
+ </summary>
+ <param name="value">XMLAttribute to be added.</param>
+ <returns>Integer containing the position at which the XMLAttribute was added.</returns>
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.Collections.XMLAttributeCollection.Remove(SNANET.XMLParser.XMLAttribute)">
+      <summary>
+ This method removes a XMLAttribute to the XMLAttributeCollection. 
+ </summary>
+ <param name="value">XMLAttribute to be removed from the XMLAttributeCollection</param>
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.Collections.XMLAttributeCollection.Insert(System.Int32,SNANET.XMLParser.XMLAttribute)">
+      <summary>
+ This method adds a XMLAttribute to the XMLAttributeCollection at a given position. 
+ </summary>
+ <param name="index">Position that the XMLAttribute is to be included.</param>
+ <param name="value">XMLAttribute to be included.</param>
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.Collections.XMLAttributeCollection.Contains(SNANET.XMLParser.XMLAttribute)">
+      <summary>
+ This method is used to check if a given XMLAttribute exists at the XMLAttributeCollection. 
+ </summary>
+ <param name="value">XMLAttribute to be checked.</param>
+ <returns>Boolean indicating if the XMLAttribute exists.</returns>
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+    <member name="P:SNANET.XMLParser.Collections.XMLAttributeCollection.Item(System.Int32)">
+      <summary>
+ Default property that returns a XMLAttribute of the collection given an index. 
+ </summary>
+ <param name="Index">Index of the collection of the desired XMLAttribute</param>
+ <value />
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+    <member name="T:SNANET.XMLParser.XMLNode">
+      <summary>
+ This class represents a node in the XML tree. 
+ </summary>
+ <history>
+ 	[bernardo]	13/10/2004	Created the class. 
+ </history></member>
+    <member name="P:SNANET.XMLParser.XMLNode.Name">
+      <summary>
+ Name of the XML Node. 
+ </summary>
+ <value />
+ <history>
+ 	[bernardo]	13/10/2004	Created the property. 
+ </history></member>
+    <member name="P:SNANET.XMLParser.XMLNode.Value">
+      <summary>
+ Value of the XML Node. 
+ </summary>
+ <value />
+ <history>
+ 	[bernardo]	13/10/2004	Created the property. 
+ </history></member>
+    <member name="P:SNANET.XMLParser.XMLNode.InnerXML">
+      <summary>
+ Inner XML of the XML Node. 
+ </summary>
+ <value />
+ <history>
+ 	[bernardo]	13/10/2004	Created the property 
+ </history></member>
+    <member name="P:SNANET.XMLParser.XMLNode.ParentNode">
+      <summary>
+ Parent node of this node. 
+ </summary>
+ <value />
+ <remarks>
+ This property returns nothing in case of the parent node being the root node. 
+ </remarks>
+ <history>
+ 	[bernardo]	13/10/2004	Created the property. 
+ </history></member>
+    <member name="P:SNANET.XMLParser.XMLNode.RootNode">
+      <summary>
+ Root node of this node. 
+ </summary>
+ <value />
+ <remarks>
+ This property returns the root node of the XML tree and not the parent node of this node. For 
+ the parent node use the ParentNode property. 
+ </remarks>
+ <history>
+ 	[bernardo]	13/10/2004	Created the property. 
+ </history></member>
+    <member name="P:SNANET.XMLParser.XMLNode.Attributes">
+      <summary>
+ This property returns a collection of the attributes that this node has. 
+ </summary>
+ <value />
+ <remarks>
+ If this node has no attributes, this property still returns a collection of 
+ XMLAttribute, but the collection has 0 items. 
+ </remarks>
+ <history>
+ 	[bernardo]	13/10/2004	Created 
+ </history></member>
+    <member name="P:SNANET.XMLParser.XMLNode.Children">
+      <summary>
+ This property returns a collection of the child nodes that this node has. 
+ </summary>
+ <value />
+ <remarks>
+ If this node has no child Nodes, this property still returns a collection of 
+ XMLNode, but the collection has 0 items. 
+ </remarks>
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.XMLNode.LoadAttributes(System.Xml.XmlAttributeCollection)">
+      <summary>
+ This method loads all the attributes in a given XML.XmlAttributeCollection. 
+ </summary>
+ <param name="attr">The given XML.XmlAttributeCollection</param>
+ <history>
+ 	[bernardo]	13/10/2004	Created the Method. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.XMLNode.LoadChildren(System.Xml.XmlNodeList)">
+      <summary>
+ This recursive method loads all children of this node, and if the node has childrens calls himself 
+ passing as parameter each child node. 
+ </summary>
+ <param name="children">Collection of Xml.XmlNode</param>
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+    <member name="T:SNANET.XMLParser.Collections.XMLNodeCollection">
+      <summary>
+ This class is a collection of XMLNode. 
+ </summary>
+ <history>
+ 	[bernardo]	13/10/2004	Created the class. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.Collections.XMLNodeCollection.Add(SNANET.XMLParser.XMLNode)">
+      <summary>
+ This method adds a XMLNode to the XMLNodeCollection. 
+ </summary>
+ <param name="value">XMLNode to be added.</param>
+ <returns>Integer containing the position at which the XMLNode was added.</returns>
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.Collections.XMLNodeCollection.Remove(SNANET.XMLParser.XMLNode)">
+      <summary>
+ This method removes a XMLNode to the XMLNodeCollection. 
+ </summary>
+ <param name="value">XMLNode to be removed from the XMLNodeCollection</param>
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.Collections.XMLNodeCollection.Insert(System.Int32,SNANET.XMLParser.XMLNode)">
+      <summary>
+ This method adds a XMLNode to the XMLNodeCollection at a given position. 
+ </summary>
+ <param name="index">Position that the XMLNode is to be included.</param>
+ <param name="value">XMLNode to be included.</param>
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.Collections.XMLNodeCollection.Contains(SNANET.XMLParser.XMLNode)">
+      <summary>
+ This method is used to check if a given XMLNode exists at the XMLNodeCollection. 
+ </summary>
+ <param name="value">XMLNode to be checked.</param>
+ <returns>Boolean indicating if the XMLNode exists.</returns>
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+    <member name="P:SNANET.XMLParser.Collections.XMLNodeCollection.Item(System.Int32)">
+      <summary>
+ Default property that returns a XMLNode of the collection given an index. 
+ </summary>
+ <param name="Index">Index of the collection of the desired XMLNode</param>
+ <value />
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+    <member name="T:SNANET.XMLParser.XMLRoot">
+      <summary>
+ Represents the root node of the xml file. 
+ </summary>
+ <history>
+ 	[bernardo]	13/10/2004	Created the class. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.XMLRoot.#ctor">
+      <summary>
+ This constructor does not require any parameters, but doesn't do anything so it's not advised 
+ to use this constructor. 
+ </summary>
+ <history>
+ 	[bernardo]	13/10/2004	Created the constructor. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.XMLRoot.#ctor(System.String)">
+      <summary>
+ This constructor receives a path and loads a XML file in that path. 
+ </summary>
+ <param name="path">Path of the XML file to be loaded.</param>
+ <history>
+ 	[bernardo]	13/10/2004	Created the constructor. 
+ </history></member>
+    <member name="P:SNANET.XMLParser.XMLRoot.Path">
+      <summary>
+ Sets/Gets the path of the loaded/to load XML file. 
+ </summary>
+ <value />
+ <history>
+ 	[bernardo]	13/10/2004	Created the property. 
+ </history></member>
+    <member name="P:SNANET.XMLParser.XMLRoot.Attributes">
+      <summary>
+ Collection of attributes of the XML root node. 
+ </summary>
+ <value />
+ <history>
+ 	[bernardo]	13/10/2004	Created the property. 
+ </history></member>
+    <member name="P:SNANET.XMLParser.XMLRoot.Children">
+      <summary>
+ Collection of child Nodes of the root node. 
+ </summary>
+ <value />
+ <history>
+ 	[bernardo]	13/10/2004	Created the property. 
+ </history></member>
+    <member name="P:SNANET.XMLParser.XMLRoot.isLoaded">
+      <summary>
+ Boolean indicating if the XML document has been loaded. 
+ </summary>
+ <value>Default False.</value>
+ <history>
+ 	[bernardo]	13/10/2004	Created the property. 
+ </history></member>
+    <member name="P:SNANET.XMLParser.XMLRoot.Name">
+      <summary>
+ The name of the root node. 
+ </summary>
+ <value />
+ <history>
+ 	[bernardo]	13/10/2004	Created the property. 
+ </history></member>
+    <member name="P:SNANET.XMLParser.XMLRoot.Value">
+      <summary>
+ The value of the root node. 
+ </summary>
+ <value />
+ <history>
+ 	[bernardo]	13/10/2004	Created the property. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.XMLRoot.LoadXMLFile">
+      <summary>
+ Load the XML file located at the path property. 
+ </summary>
+ <remarks>
+ The path MUST be absolute path. If you only know relative path use server.mappath to get 
+ the absolute path. 
+ </remarks>
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.XMLRoot.LoadXMLFile(System.String)">
+      <summary>
+ This method just sets the xmlFile atribute and calls the LoadXMLFile method. 
+ </summary>
+ <param name="path">Path of the xmlFile to be loaded.</param>
+ <remarks>
+ An absolute path must be used here. 
+ </remarks>
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.XMLRoot.GetNodesByName(System.String)">
+      <summary>
+ This method returns all nodes that match the given name. 
+ </summary>
+ <param name="name">Name of the node to be returned.</param>
+ <returns>A collection of nodes containing the matched results.</returns>
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+    <member name="M:SNANET.XMLParser.XMLRoot.GetNodesByAttribute(System.String,System.String)">
+      <summary>
+ This method returns all nodes that have an attribute with the name and value provided 
+ in the parameters. 
+ </summary>
+ <param name="attributeName">Name of the attribute to match.</param>
+ <param name="attributeValue">Value of the attribute to match.</param>
+ <returns>A collection of nodes containing the matched results.</returns>
+ <history>
+ 	[bernardo]	13/10/2004	Created the method. 
+ </history></member>
+  </members>
+</doc>

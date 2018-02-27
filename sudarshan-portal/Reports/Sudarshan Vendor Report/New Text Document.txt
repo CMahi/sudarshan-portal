@@ -1,0 +1,189 @@
+public string get_Vendor_InvoiceData(string username, string name, int pageno, int rpp, string status)
+     {
+         StringBuilder html = new StringBuilder();
+         try
+         {
+             //html.Append("<div data-scrollbar='true' data-height='401px'>");
+             html.Append("<div class='row headStyle'>");
+             html.Append("<div class='col-md-1 headContent' style='text-align:right'>Sr. No.</div><div class='col-md-2 headContent'>Vendor Code</div><div class='col-md-2 headContent'>PO Number</div><div class='col-md-2 headContent'>PO Date</div><div class='col-md-2 headContent' style='text-align:right'>Cum Inv Amt</div><div class='col-md-3 headContent'>PO GV</div></div>");
+
+             string isdata = string.Empty;
+             DataTable dt = (DataTable)ActionController.ExecuteAction("", "Vendor_Invoice_Details_Report.aspx", "getvendorinvoicedetails", ref isdata, username, name, status);
+             if (dt != null)
+             {
+                 if (dt.Rows.Count > 0)
+                 {
+                     int from = (pageno - 1) * rpp;
+                     int to = ((pageno - 1) * rpp) + rpp;
+                     for (int i = from; i < to; i++)
+                     {
+                         if (i < dt.Rows.Count)
+                         {
+                             /***********************************************************************************************************************/
+                             string authority = HttpContext.Current.Request.Url.Authority;
+                             string apath = HttpContext.Current.Request.ApplicationPath;
+                             string img_path = "../../Img/plus.png";
+                             html.Append("<div class='panel panel-default overflow-hidden m-b-10'>");
+                             html.Append("<a class='accordion-toggle accordion-toggle-styled collapsed' data-toggle='collapse' data-parent='#accordion' onclick='change_Image(" + (i + 1) + ")' href='#collapseTwo" + (i + 1) + "'>");
+                             html.Append("<div class='fc-events'>");
+                             html.Append("<h6>");
+                             html.Append("<div class='row' style='color:black'>");
+                             html.Append("<div class='col-md-1 rowContent'><input type='text' id='pk_img" + (i + 1) + "' value='0' style='display:none'><input type='image' id='img" + (i + 1) + "' src='" + img_path + "');' style='margin-right:30px'/ >" + (i + 1) + "</div><div class='col-md-2 rowContent'>" + Convert.ToString(dt.Rows[i]["Vendor_Code"]) + "</div><div class='col-md-2 rowContent'>" + Convert.ToString(dt.Rows[i]["Po_Number"]) + "</div><div class='col-md-2 rowContent'>" + Convert.ToString(dt.Rows[i]["PO_Date"]) + "</div><div class='col-md-2' style='text-align:right'>" + Convert.ToString(dt.Rows[i]["Cum_Amount"]) + "</div><div class='col-md-3 rowContent'>" + Convert.ToString(dt.Rows[i]["PO_GV"]) + "</div></div>");
+                             html.Append("</h6></div> </a>");
+                             html.Append("<div id='collapseTwo" + (i + 1) + "' class='panel-collapse collapse table-responsive'>");
+                             html.Append("<div class='panel-body'>");
+                             /***************************************************************************************************************************************************/
+
+                             html.Append("<table class='table table-bordered ' width='100%' id='tbl_InvoiceDtl'>");
+                             html.Append("<tr class='btn-default' style='background-color:ButtonFace; text-align:center; color:Black;'><th style='text-align:center'>#</th><th style='text-align:center'>Dispatch Request No</th><th style='text-align:center'>Unique No</th><th style='text-align:center'>Invoice No</th><th style='text-align:center'>Invoice Date</th><th style='text-align:center'>Invoice Amount</th><th style='text-align:center'>Plant</th><th style='text-align:center'>Penalty(%)</th><th style='text-align:center'>Status</th></tr>");
+                             html.Append("<tbody>");
+                             DataTable dtPO = new DataTable();
+                             dtPO = (DataTable)ActionController.ExecuteAction("", "Invoice_Details_Report.aspx", "getinvoicedetailspo", ref isdata, Convert.ToString(dt.Rows[i]["Vendor_Code"]), Convert.ToString(dt.Rows[i]["Po_Number"]), name, status);
+                             if (dtPO != null)
+                             {
+                                 for (int j = 0; j < dtPO.Rows.Count; j++)
+                                 {
+                                     string uno = Convert.ToString(dtPO.Rows[j]["Unique_No"]);
+                                     string p1 = (string)ActionController.ExecuteAction("", "Invoice_Details_Report.aspx", "getstatuscount1", ref isdata, uno, "P1");
+                                     string p2 = (string)ActionController.ExecuteAction("", "Invoice_Details_Report.aspx", "getstatuscount1", ref isdata, uno, "P2");
+                                     string is_early = Convert.ToString(dtPO.Rows[j]["Is_Early_Payment_Request"]);
+                                     string str_status = Convert.ToString(dtPO.Rows[j]["Status"]);
+                                     StringBuilder img_Data = new StringBuilder();
+
+                                     string phdr = "";
+                                     string pdtl = "";
+
+                                     phdr = "<th class='imgBtn'>P1E</th><th class='imgBtn'>P2E</th>";
+                                     pdtl = "<td><a href='#'><img src='../../images/1.png' title='P1E'/></a></td><td><a href='#'><img src='../../images/1.png' title='P2E'/></a></td>";
+                                     if (p1 != "0" && p1 != "")
+                                     {
+                                         pdtl = "<td><a href='#'><img src='../../images/2.png' title='P1E'/></a></td><td><a href='#'><img src='../../images/1.png' title='P2E'/></a></td>";
+                                     }
+                                     if (p2 != "0" && p2 != "")
+                                     {
+                                         pdtl = "<td><a href='#'><img src='../../images/2.png' title='P1E'/></a></td><td><a href='#'><img src='../../images/2.png' title='P2E'/></a></td>";
+                                     }
+
+                                     string early = "";
+                                     if (is_early == "0")
+                                     {
+                                         early = "<td><a href='#'><img src='../../images/1.png' title='Early Request'/></a></td>";
+                                     }
+                                     else
+                                     {
+                                         early = "<td><a href='#'><img src='../../images/2.png' title='Early Request'/></a></td>";
+                                     }
+                                     img_Data.Append("<table><tr>");
+
+                                     if (str_status == "Quality Control Complete with Deviation")
+                                     {
+                                         img_Data.Append("<th class='imgBtn'>TR</th><th class='imgBtn'>GRN</th>" + phdr + "<th class='imgBtn'>QCD</th><th class='imgBtn'>RJ</th><th class='imgBtn'>BB</th><th class='imgBtn'>PP</th><th class='imgBtn'>ER</th></tr><tbody>");
+                                         img_Data.Append("<tr><td><a href='#'><img src='../../images/2.png' title='Transition'/></a></td><td><a href='#'><img src='../../images/2.png' title='GRN Complete'/></a></td>" + pdtl + "<td><a href='#'><img src='../../images/3.png' title='QC-Approved under Deviation'/></a></td><td><a href='#'><img src='../../images/1.png' title='Rejected'/></a></td><td><a href='#'><img src='../../images/1.png' title='Bill Booked'/></a></td><td><a href='#'><img src='../../images/1.png' title='Payment Processed'/></a></td>" + early + "</tr>");
+                                     }
+                                     else if (str_status == "P1")
+                                     {
+                                         img_Data.Append("<th class='imgBtn'>TR</th><th class='imgBtn'>GRN</th><th class='imgBtn'>P1E</th><th class='imgBtn'>P2E</th><th class='imgBtn'>QCD</th><th class='imgBtn'>RJ</th><th class='imgBtn'>BB</th><th class='imgBtn'>PP</th><th class='imgBtn'>ER</th></tr><tbody>");
+                                         img_Data.Append("<tr><td><a href='#'><img src='../../images/2.png' title='Transition'/></a></td><td><a href='#'><img src='../../images/2.png' title='GRN Complete'/></a></td>" + pdtl + "<td><a href='#'><img src='../../images/1.png' title='QC-Approved under Deviation'/></a></td><td><a href='#'><img src='../../images/1.png' title='Rejected'/></a></td><td><a href='#'><img src='../../images/1.png' title='Bill Booked'/></a></td><td><a href='#'><img src='../../images/1.png' title='Payment Processed'/></a></td>" + early + "</tr>");
+                                     }
+                                     else if (str_status == "P2")
+                                     {
+                                         img_Data.Append("<th class='imgBtn'>TR</th><th class='imgBtn'>GRN</th><th class='imgBtn'>P1E</th><th class='imgBtn'>P2E</th><th class='imgBtn'>QCD</th><th class='imgBtn'>RJ</th><th class='imgBtn'>BB</th><th class='imgBtn'>PP</th><th class='imgBtn'>ER</th></tr><tbody>");
+                                         img_Data.Append("<tr><td><a href='#'><img src='../../images/2.png' title='Transition'/></a></td><td><a href='#'><img src='../../images/2.png' title='GRN Complete'/></a></td>" + pdtl + "<td><a href='#'><img src='../../images/1.png' title='QC-Approved under Deviation'/></a></td><td><a href='#'><img src='../../images/1.png' title='Rejected'/></a></td><td><a href='#'><img src='../../images/1.png' title='Bill Booked'/></a></td><td><a href='#'><img src='../../images/1.png' title='Payment Processed'/></a></td>" + early + "</tr>");
+                                     }
+                                     else if (str_status == "Quality Control Complete with Deviation & Deduction")
+                                     {
+
+                                         img_Data.Append("<th class='imgBtn'>TR</th><th class='imgBtn'>GRN</th>" + phdr + "<th class='imgBtn'>QCDD</th><th class='imgBtn'>RJ</th><th class='imgBtn'>BB</th><th class='imgBtn'>PP</th><th class='imgBtn'>ER</th></tr><tbody>");
+                                         img_Data.Append("<tr><td><a href='#'><img src='../../images/2.png' title='Transition'/></a></td><td><a href='#'><img src='../../images/2.png' title='GRN Complete'/></a></td>" + pdtl + "<td><a href='#'><img src='../../images/4.png' title='QC-Approved with Deviation & Deduction'/></a></td><td><a href='#'><img src='../../images/1.png' title='Rejected'/></a></td><td><a href='#'><img src='../../images/1.png' title='Bill Booked'/></a></td><td><a href='#'><img src='../../images/1.png' title='Payment Processed'/></a></td>" + early + "</tr>");
+                                     }
+                                     else
+                                     {
+                                         if (str_status == "Rejected")
+                                         {
+                                             img_Data.Append("<th class='imgBtn'>TR</th><th class='imgBtn'>GRN</th>" + phdr + "<th class='imgBtn'>QC</th><th class='imgBtn'>RJ</th><th class='imgBtn'>BB</th><th class='imgBtn'>PP</th><th class='imgBtn'>ER</th></tr><tbody>");
+                                             img_Data.Append("<tr><td><a href='#'><img src='../../images/1.png' title='Transition'/></a></td><td><a href='#'><img src='../../images/1.png' title='GRN Complete'/></a></td>" + pdtl + "<td><a href='#'><img src='../../images/1.png' title='QC-Approved'/></a></td><td><a href='#'><img href='#' src='../../images/0.png' title='Rejected'/></a></td><td><a href='#'><img src='../../images/1.png' title='Bill Booked'/></a></td><td><a href='#'><img src='../../images/1.png' title='Payment Processed'/></a></td>" + early + "</tr>");
+                                         }
+                                         else if (str_status == "Transition")
+                                         {
+                                             img_Data.Append("<th class='imgBtn'>TR</th><th class='imgBtn'>GRN</th>" + phdr + "<th class='imgBtn'>QC</th><th class='imgBtn'>RJ</th><th class='imgBtn'>BB</th><th class='imgBtn'>PP</th><th class='imgBtn'>ER</th></tr><tbody>");
+                                             img_Data.Append("<tr><td><a href='#'><img src='../../images/2.png' title='Transition'/></a></td><td><a href='#'><img src='../../images/1.png' title='GRN Complete'/></a></td>" + pdtl + "<td><a href='#'><img src='../../images/1.png' title='QC-Approved'/></a></td><td><a href='#'><img src='../../images/1.png' title='Rejected'/></a></td><td><a href='#'><img src='../../images/1.png' title='Bill Booked'/></a></td><td><a href='#'><img src='../../images/1.png' title='Payment Processed'/></a></td>" + early + "</tr>");
+                                         }
+                                         else if (str_status == "GRN Complete")
+                                         {
+                                             img_Data.Append("<th class='imgBtn'>TR</th><th class='imgBtn'>GRN</th>" + phdr + "<th class='imgBtn'>QC</th><th class='imgBtn'>RJ</th><th class='imgBtn'>BB</th><th class='imgBtn'>PP</th><th class='imgBtn'>ER</th></tr><tbody>");
+                                             img_Data.Append("<tr><td><a href='#'><img src='../../images/2.png' title='Transition'/></a></td><td><a href='#'><img src='../../images/2.png' title='GRN Complete'/></a></td>" + pdtl + "<td><a href='#'><img src='../../images/1.png' title='QC-Approved'/></a></td><td><a href='#'><img src='../../images/1.png' title='Rejected'/></a></td><td><a href='#'><img src='../../images/1.png' title='Bill Booked'/></a></td><td><a href='#'><img src='../../images/1.png' title='Payment Processed'/></a></td>" + early + "</tr>");
+                                         }
+                                         else if (str_status == "Quality Control Complete")
+                                         {
+                                             img_Data.Append("<th class='imgBtn'>TR</th><th class='imgBtn'>GRN</th>" + phdr + "<th class='imgBtn'>QC</th><th class='imgBtn'>RJ</th><th class='imgBtn'>BB</th><th class='imgBtn'>PP</th><th class='imgBtn'>ER</th></tr><tbody>");
+                                             img_Data.Append("<tr><td><a href='#'><img src='../../images/2.png' title='Transition'/></a></td><td><a href='#'><img src='../../images/2.png' title='GRN Complete'/></a></td>" + pdtl + "<td><a href='#'><img src='../../images/2.png' title='QC-Approved'/></a></td><td><a href='#'><img src='../../images/1.png' title='Rejected'/></a></td><td><a href='#'><img src='../../images/1.png' title='Bill Booked'/></a></td><td><a href='#'><img src='../../images/1.png' title='Payment Processed'/></a></td>" + early + "</tr>");
+                                         }
+                                         else
+                                         {
+
+                                             string count = (string)ActionController.ExecuteAction("", "Invoice_Details_Report.aspx", "getstatuscount", ref isdata, uno);
+                                             string dtImg = string.Empty;
+                                             if (count != "0" && count != "")
+                                             {
+                                                 img_Data.Append("<th class='imgBtn'>TR</th><th class='imgBtn'>GRN</th>" + phdr + "<th class='imgBtn'>QCD</th><th class='imgBtn'>RJ</th><th class='imgBtn'>BB</th><th class='imgBtn'>PP</th><th class='imgBtn'>ER</th></tr><tbody>");
+                                                 dtImg = "<a href='#'><img src='../../images/3.png' title='QC-Approved under Deviation'/></a>";
+                                             }
+                                             else
+                                             {
+                                                 img_Data.Append("<th class='imgBtn'>TR</th><th class='imgBtn'>GRN</th>" + phdr + "<th class='imgBtn'>QC</th><th class='imgBtn'>RJ</th><th class='imgBtn'>BB</th><th class='imgBtn'>PP</th><th class='imgBtn'>ER</th></tr><tbody>");
+                                                 dtImg = "<a href='#'><img src='../../images/2.png' title='QC-Approved'/></a>";
+                                             }
+                                             if (str_status == "Payment Processed")
+                                             {
+                                                 img_Data.Append("<tr><td><a href='#'><img src='../../images/2.png' title='Transition'/></a></td><td><a href='#'><img src='../../images/2.png' title='GRN Complete'/></a></td>" + pdtl + "<td>" + dtImg + "</td><td><a href='#'><img src='../../images/1.png' title='Rejected'/></a></td><td><a href='#'><img src='../../images/2.png' title='Bill Booked'/></a></td><td><a href='#'><img src='../../images/2.png' title='Payment Processed'/></a></td>" + early + "</tr>");
+                                             }
+                                             //else if (str_status == "Bill Booked")
+                                             else
+                                             {
+                                                 img_Data.Append("<tr><td><a href='#'><img src='../../images/2.png' title='Transition'/></a></td><td><a href='#'><img src='../../images/2.png' title='GRN Complete'/></a></td>" + pdtl + "<td>" + dtImg + "</td><td><a href='#'><img src='../../images/1.png' title='Rejected'/></a></td><td><a href='#'><img src='../../images/2.png' title='Bill Booked'/></a></td><td><a href='#'><img src='../../images/1.png' title='Payment Processed'/></a></td>" + early + "</tr>");
+                                             }
+                                         }
+                                     }
+                                     img_Data.Append("</tbody></table>");
+                                     html.Append("<tr style='vertical-align:middle'><td style='text-align:center'>" + (j + 1) + "</td><td style='text-align:center'><a href='#paymentterm' role='button' data-toggle='modal' onclick='setSelectedNote(" + Convert.ToString(dtPO.Rows[j]["PK_Dispatch_Note_ID"]) + ")'>" + Convert.ToString(dtPO.Rows[j]["request_id"]) + "</a></td><td style='text-align:left'>" + Convert.ToString(dtPO.Rows[j]["Unique_No"]) + "</td><td style='text-align:left'>" + Convert.ToString(dtPO.Rows[j]["Invoice_No"]) + "</td><td style='text-align:center'>" + Convert.ToString(dtPO.Rows[j]["Invoice_Date"]) + "</td><td style='text-align:right'>" + Convert.ToString(dtPO.Rows[j]["Invoice_Amount"]) + "</td><td style='text-align:center'>" + Convert.ToString(dtPO.Rows[j]["PLANT"]) + "</td><td style='text-align:right'>" + Convert.ToString(dtPO.Rows[j]["PRCEN"]) + "</td><td style='text-align:center;'>" + Convert.ToString(img_Data) + "<input type='text' id='pk_Dispatch" + (j + 1) + "' value=" + Convert.ToString(dtPO.Rows[j]["PK_Dispatch_Note_ID"]) + " style='display:none'></td></tr>");
+                                 }
+                             }
+                             html.Append("</tbody></table>");
+
+                             /***************************************************************************************************************************************************/
+                             html.Append("</div></div></div>");
+
+                             /***********************************************************************************************************************/
+                         }
+                     }
+                     //html.Append("</div>");
+                     double cnt = Convert.ToDouble(dt.Rows.Count) / rpp;
+                     if (cnt > Convert.ToInt16(Convert.ToInt32(dt.Rows.Count) / rpp))
+                     {
+                         cnt = (int)cnt + 1;
+                     }
+
+                     if (cnt > 1)
+                     {
+                         html.Append("<div class='dataTables_paginate paging_simple_numbers' style='text-align:center'>");
+                         html.Append("<ul class='pagination'>");
+                         for (int j = 1; j <= cnt; j++)
+                         {
+                             html.Append("<li class='paginate_button' style='margin:2px;'><input type='button' value='" + j + "' class='btn btn-default buttons-copy buttons-flash' style=' font-weight:normal' onclick='gotopage(this," + rpp + ")'></li>");
+                         }
+                         html.Append("</ul></div>");
+                     }
+
+                 }
+
+
+             }
+         }
+         catch (Exception ex)
+         {
+             StringBuilder str = new StringBuilder();
+             html = str;
+             FSL.Logging.Logger.WriteEventLog(false, ex);
+         }
+         return Convert.ToString(html);
+     }

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Advance Policy Master</title>
+	<link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="../../assets/css/style.min.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="page-container" class="page-with-top-menu page-header-fixed">
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid" style="height:70px;border-bottom: 4px solid #42B1E4;">
+				<div class="navbar-header"><a href="WorkQueue.html" class="text-muted"><img src="images/Home.png" height="40" style="margin-top:10px;" /><img src="Images/Logo.png" height="25" style="margin-top:10px;margin-left:10px;" /></a></div>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown navbar-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<span class="hidden-xs">WRAMESH</span> <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li><a href="javascript:;">Edit Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="javascript:;">Log Out</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-danger">
+					<div class="panel-heading">
+						<h4 class="panel-title">Advance Policy</h4>
+					</div>
+					<div class="panel-body">
+						<div class="form-horizontal bordered-group">
+							<div class="form-group">
+								<label class="col-md-1 control-label">Country</label>
+								<div class="col-md-2 ui-sortable">
+									<select class="form-control">
+                                        <option>---Select One---</option>
+                                        <option>India</option>
+                                        <option>Europe</option>
+                                    </select>
+								</div>
+								<label class="col-md-1 control-label">City</label>
+								<div class="col-md-2 ui-sortable">
+									<select class="form-control">
+                                        <option>---Select One---</option>
+                                        <option>Pune</option>
+                                        <option>London</option>
+                                    </select>
+								</div>
+								<label class="col-md-1 control-label">Grade</label>
+								<div class="col-md-2 ui-sortable">
+									<select class="form-control">
+                                        <option>---Select One---</option>
+                                        <option>Officer</option>
+                                        <option>Manager</option>
+                                        <option>VP</option>
+                                        <option>Director</option>
+                                    </select>
+								</div>
+								<label class="col-md-1 control-label">Amount</label>
+								<div class="col-md-2 ui-sortable">
+									<input class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-5"></div>
+								<div class="col-md-7">
+									<button id="btn_AddNew" type="button" class="btn btn-grey btn-rounded m-b-5">Add New</button>
+									<button id="btn_ViewAll" type="button" class="btn btn-grey btn-rounded m-b-5">View All</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12" id="div_ShipperDetails">
+				<div class="panel panel-danger">
+					<div class="panel-heading">
+						<h4 class="panel-title">Advance Policy Details</h4>
+					</div>
+					<div class="panel-body">
+						<div class="panel pagination-danger">
+							<table class="table table-bordered table-hover">
+								<thead>
+									<tr class="grey">
+										<th style="width:2%">#</th>
+										<th>Country</th>
+										<th>City</th>
+										<th>Grade</th>
+										<th>Amount</th>
+										<th colspan='2' style="width:10%">Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>India</td>
+										<td>Pune</td>
+										<td>Officer</td>
+										<td style="text-align:right">2000.00</td>
+										<td><i class="fa fa-fw m-r-10 pull-left f-s-18 fa-edit"></i></td>
+										<td><i class="fa fa-fw pull-left f-s-18 fa-trash"></i></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../../assets/plugins/jquery/jquery-1.9.1.min.js"></script>
+	<script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#div_ShipperDetails").hide();
+		});
+		
+		$("#btn_ViewAll").click(function(){
+			$("#div_ShipperDetails").show();
+		});
+	</script>
+</body>
+</html>
